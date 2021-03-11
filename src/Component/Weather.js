@@ -6,7 +6,7 @@ const Weather = () => {
         <div className="Weather-container">
             <div className="weather-content">
                 <Searchbar/>
-                <Searchbar/>
+                
             </div>
         </div>
     )
