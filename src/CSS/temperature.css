@@ -1,0 +1,10 @@
+.temperature-container{
+    border: 1px solid black;
+    display: flex;
+    flex-flow: row wrap;
+    width:50vh;
+    height:40vh;
+    justify-content: space-around;
+    margin-top: 35x;
+    margin-left: 15px;
+}
