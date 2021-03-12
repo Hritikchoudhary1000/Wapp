@@ -4,9 +4,9 @@ import Searchbar from './Searchbar'
 const Weather = () => {
     return (
         <div className="Weather-container">
-            <div className="weather-content">
+            <div className="weather-content ">
                 <Searchbar/>
-            hritik
+        
             </div>
         </div>
     )

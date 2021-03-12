@@ -1,5 +1,8 @@
-import React from 'react'
-
+import React from 'react';
+import sunrisepic from "../Assets/sunrise.png";
+import sunsetpic from "../Assets/sunset.webp";
+import '../CSS/temperature.css'
+import '../CSS/suninfo.css'
 const SunInfo = (sunInfo) => {
 
     function unixToNormal(unixTime){
@@ -22,18 +25,19 @@ const SunInfo = (sunInfo) => {
     }
     let sunrise = unixToNormal(sunInfo.sun.sunrise)
     let sunset = unixToNormal(sunInfo.sun.sunset);
-    console.log(sunset)
-    console.log(sunrise)
+    
     return (
-        <div>
+        <div className="suninfo-container">
            <div className="date-container">
-                 {sunrise.day}th {sunrise.mon}, {sunrise.yr}
+                 {sunrise.day}th {sunrise.mon} <h1>{sunrise.yr}</h1>
            </div>
            <div className="sunrise-container">
-                SUNRISE {sunrise.hrs}:{sunrise.min} am
+                <img className="sun_icon_img" src={sunrisepic} alt="sunrise"/> 
+                <h3>{sunrise.hrs}:{sunrise.min} am</h3>
            </div>
            <div className="sunset-container">
-                Sunset {convertHrs(sunset.hrs)}:{sunset.min} pm
+           <img className="sun_icon_img"  src={sunsetpic} alt="sunset"/> 
+           <h3> {convertHrs(sunset.hrs)}:{sunset.min} pm</h3>
            </div>
            
         </div>

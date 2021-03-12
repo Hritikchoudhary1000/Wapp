@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import {Link,NavLink,Route} from 'react-router-dom'
+import {NavLink,Route} from 'react-router-dom'
 import Coordinates from './Coordinates';
 import SunInfo from './SunInfo';
 import Temperature from './Temperature';
 import Wind from './Wind';
+import '../CSS/Weather.css'
 const Searchbar = () => {
-    let [city,setCity]=useState(null);
+    let [city,setCity]=useState("");
     let apiKey="16ff73f8aa95e20ff8235bf57a0df51b"
-    let [tempJson,setTempJson] = useState(null);
+    let [tempJson,setTempJson] = useState({});
     const handleSubmit = (e) =>{
         e.preventDefault();
     }
@@ -15,11 +16,11 @@ const Searchbar = () => {
         setCity(e.target.value);
         
     }
-    console.log(tempJson)
+    
     const renderData = ()=>{
-        if(city===null||tempJson===null){
+        if(city===""||tempJson===undefined){
             return (<div>
-                   <h1> No Data</h1>
+                  
             </div>)
         }
         else{
@@ -27,8 +28,8 @@ const Searchbar = () => {
                 <>
                 <div className='navigation-links'>
                          
-                        <span><NavLink to="/temperature" exact> temperature</NavLink> </span>
-                        
+                        <span><NavLink to="/temperature" exact> Temperature</NavLink> </span>
+                        <span><NavLink to ="/coordinates" exact> Coordinates </NavLink></span>
                         <span><NavLink to ="/suninfo" exact> SunInfo </NavLink></span>
                         <span><NavLink to="/windinfo" exact>Wind</NavLink></span>
 
@@ -47,9 +48,7 @@ const Searchbar = () => {
                     <Route path="/windinfo" exact>
                         <Wind value={tempJson.wind}/>
                     </Route>
-                   <Route path="/" exact>
-                        <Searchbar city={city} setCity={setCity}/>
-                    </Route>
+                  
                 </div>
                 </>
             )
@@ -57,21 +56,19 @@ const Searchbar = () => {
     }
     useEffect(()=>{
         const fetchApi = async  (city)=>{
-            if(city!==null){
+            if(city!==""){
                 let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
-                console.log(url);
-               
                 let response= await fetch(url)
                 let items= await response.json();
                 setTempJson(items);
                 }
-                else{
+            else{
                     setTempJson({})
                 }
-                console.log(tempJson)
+               
         }
         fetchApi(city);
-    },[city]
+    },[city,apiKey]
 
     );
     

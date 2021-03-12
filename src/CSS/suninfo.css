@@ -1,0 +1,13 @@
+.suninfo-container{
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    width:70vh;
+    display: flex;
+    flex-flow:row wrap;
+    justify-content: space-around;
+    margin-top:20px
+}
+.date-container{
+    margin:auto 0;
+    font-weight: bolder;
+}

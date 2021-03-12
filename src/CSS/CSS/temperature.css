@@ -1,0 +1,9 @@
+.temperature-container{
+    border: 1px solid black;
+    display: flex;
+    flex-flow: row wrap;
+    width:100vh;
+    height:100vh;
+    justify-content: space-around;
+
+}

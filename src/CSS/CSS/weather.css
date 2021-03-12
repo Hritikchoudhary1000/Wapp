@@ -1,0 +1,29 @@
+.navigation-header{
+    background-color: #38cfc8;
+    height:20vh;
+   
+}
+.navigation-logo{
+    background-color: white;
+    height:10vh;
+}
+.navigation-links{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 1vh;
+    text-decoration: none;
+    
+    
+}
+.navigation-links >span{
+    border-bottom: 2px solid  black;
+    color:white;
+    font-weight: bolder;
+    padding:2px;
+    width: 20vh;
+    margin-top:20px;
+   
+    
+}

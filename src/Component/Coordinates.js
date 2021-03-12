@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import '../CSS/coordinate.css';
 
 const Coordinates = (coordinate) => {
     
@@ -7,12 +8,12 @@ const Coordinates = (coordinate) => {
     return (
         <div className="Coordinate-container">
             <div>   
-                <span>Longitude</span>
-                <span>{lon}</span>
+                <span><h3>Longitude</h3></span>
+                <span><h2>{lon}</h2></span>
             </div>
             <div>   
-                <span>Latitude</span>
-                <span>{lat}</span>
+                <span><h3>Latitude</h3></span>
+                <span><h2>{lat}</h2></span>
             </div>
         </div>
     )

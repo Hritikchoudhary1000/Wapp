@@ -1,0 +1,9 @@
+.Coordinate-container{
+    margin-top: 20px;
+    border-top: 1px solid black;
+    display: flex;
+    flex-flow: row wrap;
+    width:40vh;
+    
+    justify-content: space-between;
+}
